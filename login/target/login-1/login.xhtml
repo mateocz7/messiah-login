@@ -9,135 +9,8 @@
 <h:head>
     <title>Iniciar sesión | Messiah Digital Smart Health</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;display=swap" />
+    <link rel="stylesheet" type="text/css" href="styles/styles_login.css" />
 
-    <style>
-        html, body {
-            margin: 0;
-            height: 100%;
-            width: 100%;
-            background:
-                linear-gradient(rgba(255, 255, 255, 0.85),
-                                rgba(255, 255, 255, 0.85)),
-                url("img/fondo_login.png") no-repeat center center;
-            background-size: cover;
-            font-family: 'Roboto', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* Contenedor horizontal logo + form */
-        .login-container {
-            display: flex;
-            align-items: flex-start; /* logo y form alineados verticalmente */
-            gap: 100px; /* separación ajustable */
-        }
-
-        /* Logo */
-        .logo-container img {
-            width: 270px;  /* tamaño inicial del logo */
-            height: auto;
-        }
-
-        /* Formulario */
-        .login-card {
-            width: 400px;
-            background: #ffffff;
-            border-radius: 16px;
-            padding: 40px 35px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-            text-align: center;
-        }
-
-        .login-card h2 {
-            margin: 0 0 25px 0;
-            font-size: 26px;
-            color: #1c1c1c;
-        }
-
-        .p-field {
-            margin-bottom: 18px;
-        }
-
-        .ui-inputtext, .ui-password {
-            width: 100% !important;
-            padding: 14px 15px;
-            font-size: 15px;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-            outline: none;
-            background-color: #fff !important;
-            color: #333 !important;
-        }
-
-        /* Placeholder gris */
-        .ui-inputtext::placeholder,
-        .ui-password::placeholder {
-            color: #888 !important;
-        }
-
-        .ui-inputtext:focus, .ui-password:focus {
-            border-color: #243cae !important;
-        }
-
-        .forgot-link {
-            text-align: right;
-            display: block;
-            margin-bottom: 25px;
-            font-size: 14px;
-            color: #1c1c1c;
-            text-decoration: none;
-        }
-
-        .forgot-link:hover {
-            text-decoration: underline;
-        }
-
-        .ui-button {
-            width: 100% !important;
-            padding: 14px;
-            font-size: 16px;
-            border-radius: 6px;
-            background-color: #243cae !important;
-            color: #fff !important;
-            border: none;
-        }
-
-        .ui-button:hover {
-            background-color: #1c3090 !important;
-        }
-
-        .register {
-            margin-top: 20px;
-            font-size: 14px;
-        }
-
-        .register a {
-            color: #1c1c1c;
-            font-weight: 600;
-            text-decoration: underline;
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 1024px) {
-            .login-container {
-                flex-direction: column;
-                align-items: center;
-                gap: 30px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .login-card {
-                width: 90%;
-                padding: 30px 20px;
-            }
-
-            .logo-container img {
-                width: 80px;
-            }
-        }
-    </style>
 </h:head>
 
 <h:body>
@@ -176,8 +49,6 @@
                                  update="growl"
                                  oncomplete="PF('growl').show([{summary:'Info', detail:'Login simulado', severity:'info'}])"/>
             </div>
-
-          
             <!-- Growl -->
             <p:growl id="growl" widgetVar="growl" showDetail="true" life="3000" />
 
