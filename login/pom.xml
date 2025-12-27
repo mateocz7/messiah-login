@@ -1,8 +1,7 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
+<project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                              http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.mycompany</groupId>
@@ -10,7 +9,7 @@
     <version>1</version>
     <packaging>war</packaging>
     <name>login-1</name>
-    
+
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -19,7 +18,7 @@
         <failOnMissingWebXml>false</failOnMissingWebXml>
         <jakartaee>8.0.0</jakartaee>
     </properties>
-    
+
     <dependencies>
         <!-- Jakarta EE API -->
         <dependency>
@@ -28,16 +27,22 @@
             <version>${jakartaee}</version>
             <scope>provided</scope>
         </dependency>
-        
-      <dependency>
+
+        <!-- PrimeFaces 15 -->
+        <dependency>
             <groupId>org.primefaces</groupId>
             <artifactId>primefaces</artifactId>
             <version>15.0.0</version>
         </dependency>
-        
-        <!-- Nota: NO es necesario un theme externo -->
+
+        <!-- PrimeFaces Themes para PF15 (incluye varios temas) -->
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces-themes</artifactId>
+            <version>15.0.1</version>
+        </dependency>
     </dependencies>
-    
+
     <build>
         <plugins>
             <!-- Compilador -->

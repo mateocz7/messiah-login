@@ -6,19 +6,111 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui">
 
-    <h:head>
-        <title>Login</title>
-    </h:head>
+<h:head>
+    <title>Login Profesional</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;display=swap" />
 
-    <h:body>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-        Hello from Facelets
-        <br/><br/>
+        .login-panel {
+            background: #ffffff;
+            padding: 50px 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            width: 400px;
+        }
 
-    <h:form>
-            <p:button value="PrimeFaces OK" />
-        </h:form>
+        .login-title {
+            font-size: 30px;
+            font-weight: 500;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #333;
+        }
 
+        .p-field {
+            margin-bottom: 15px;
+        }
 
-    </h:body>
+        .ui-inputtext, .ui-password {
+            width: 100% !important;
+            background-color: #fff !important;
+            color: #333 !important;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        .ui-button {
+            width: 100% !important;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 6px;
+        }
+
+        .forgot-link, .register-link {
+            font-size: 14px;
+            text-align: center;
+            display: block;
+            margin-top: 10px;
+            color: #007ad9;
+            text-decoration: none;
+        }
+
+        .forgot-link:hover, .register-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</h:head>
+
+<h:body>
+
+    <h:form id="loginForm" class="login-panel">
+
+        <!-- Título -->
+        <div class="login-title">Iniciar Sesión</div>
+
+        <!-- Correo electrónico -->
+        <div class="p-field">
+            <p:inputText id="email" value="#{param.email}" required="true" 
+                         label="Correo electrónico" placeholder="Correo electrónico"/>
+        </div>
+
+        <!-- Contraseña -->
+        <div class="p-field">
+            <p:password id="password" value="#{param.password}" required="true" 
+                        label="Contraseña" placeholder="Contraseña" feedback="false"/>
+        </div>
+
+        <!-- Olvidaste la contraseña -->
+        <h:outputLink value="#" styleClass="forgot-link">¿Olvidaste la contraseña?</h:outputLink>
+
+        <!-- Botón Iniciar sesión -->
+        <div class="p-field">
+            <p:commandButton value="Iniciar sesión" styleClass="ui-button-success" 
+                             action="#"
+                             update="growl"
+                             oncomplete="PF('growl').show([{summary:'Info', detail:'Login simulado', severity:'info'}])"/>
+        </div>
+
+        <!-- Registrarse -->
+        <h:outputText value="¿No tienes una cuenta?" style="text-align:center; display:block; margin-top:10px;" />
+        <h:outputLink value="#" styleClass="register-link">Regístrate</h:outputLink>
+
+        <!-- Growl para mensajes -->
+        <p:growl id="growl" widgetVar="growl" showDetail="true" life="3000" />
+
+    </h:form>
+
+</h:body>
 </html>
