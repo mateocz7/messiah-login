@@ -14,6 +14,7 @@
         html, body {
             margin: 0;
             height: 100%;
+            width: 100%;
             background:
                 linear-gradient(rgba(255, 255, 255, 0.85),
                                 rgba(255, 255, 255, 0.85)),
@@ -25,23 +26,22 @@
             align-items: center;
         }
 
-        /* Contenedor horizontal */
+        /* Contenedor horizontal logo + form */
         .login-container {
             display: flex;
-            align-items: flex-start; /* alineación vertical del logo y form */
-            margin-left: -40%;
+            align-items: flex-start; /* logo y form alineados verticalmente */
+            gap: 100px; /* separación ajustable */
         }
 
         /* Logo */
         .logo-container img {
-            width: 30%;  /* ajusta tamaño del logo */
+            width: 270px;  /* tamaño inicial del logo */
             height: auto;
-             margin-left: 50%;
         }
 
         /* Formulario */
         .login-card {
-            width: 420px;
+            width: 400px;
             background: #ffffff;
             border-radius: 16px;
             padding: 40px 35px;
@@ -68,6 +68,12 @@
             outline: none;
             background-color: #fff !important;
             color: #333 !important;
+        }
+
+        /* Placeholder gris */
+        .ui-inputtext::placeholder,
+        .ui-password::placeholder {
+            color: #888 !important;
         }
 
         .ui-inputtext:focus, .ui-password:focus {
@@ -112,11 +118,23 @@
             text-decoration: underline;
         }
 
-        @media (max-width: 768px) {
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
             .login-container {
                 flex-direction: column;
                 align-items: center;
                 gap: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .login-card {
+                width: 90%;
+                padding: 30px 20px;
+            }
+
+            .logo-container img {
+                width: 80px;
             }
         }
     </style>
@@ -159,8 +177,7 @@
                                  oncomplete="PF('growl').show([{summary:'Info', detail:'Login simulado', severity:'info'}])"/>
             </div>
 
-        
-
+          
             <!-- Growl -->
             <p:growl id="growl" widgetVar="growl" showDetail="true" life="3000" />
 
